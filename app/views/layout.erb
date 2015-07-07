@@ -7,7 +7,7 @@
 
   <%= @user ? "Welcome, #{@user.email}." : "Welcome." %>
 
-  <% if flash[:notice] %>
+  <% if flash[:notice] %> # consider refactoring to a partial
     <div id='notice'>
       <%= flash[:notice] %>
     </div>

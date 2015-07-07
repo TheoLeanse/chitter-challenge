@@ -15,12 +15,8 @@ class Chitter < Sinatra::Base
     erb :'users/new'
   end
 
-  post '/users/new' do
-    user = User.new(
-      email:                 params['email'],
-      password:              params['password'],
-      password_confirmation: params['password_confirmation']
-    )
+  post '/users/new' do # this is not a conventional route for creating a resource 'post /users'
+    user = User.new(params)
     if user.save
       session[:user_id] = user.id
       redirect '/'
@@ -56,11 +52,12 @@ class Chitter < Sinatra::Base
   end
 
   post '/peeps' do
-    peep = Peep.new body: params[:peep]
+    peep = Peep.new body: params[:peep], time: DateTime.now
     current_user.peeps << peep
     if peep.save
       redirect '/peeps'
     else
+      # no else condition?
     end
   end
 

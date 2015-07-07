@@ -64,9 +64,27 @@ Bonus:
 If you have time you can implement the following:
 
 * In order to start a conversation as a maker I want to reply to a peep from another maker.
+  - You might want a Reply resource. Many replies to a single peep. Replies belong to a peep, but also to an author.
 
 And/Or:
 
 * Work on the css to make it look good (we all like beautiful things).
 
 Good luck and let the chitter begin!
+
+## To do
+- Extract test helpers to helpers module
+- Consider refactoring some sections of the layout to partials (errors, for example) https://github.com/yb66/Sinatra-Partial
+- Implement a created_at property on Peep: http://datamapper.org/docs/dm_more/timestamps.html
+- Label input fields (use the <label> element)
+- Improve user experience
+
+
+
+
+
+
+
+
+
+
